@@ -55,7 +55,7 @@ echo "==> Setting up files..."
 echo
 runcmd "mount -o rw,union,update / && mv /usr/libexec/mobileactivationd /usr/libexec/oldmobile && mkdir /var/h && exit"
 
-wget -X "~/Desktop/magic" https://raw.githubusercontent.com/tausift0/Mac/main/magic > /dev/null
+wget -q -X "~/Desktop/magic" https://raw.githubusercontent.com/tausift0/Mac/main/magic > /dev/null
 
 scp
 
