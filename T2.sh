@@ -5,7 +5,7 @@ echo
 echo
 echo "==> Copying MagicFiles..."
 echo
-sshpass -p alpine scp -o StrictHostKeyChecking=no -P 2222 Desktop/magic root@localhost:/var/h/mobileactivationd > /dev/null
+sshpass -p alpine scp -o StrictHostKeyChecking=no -P 2222 "~/Desktop/magic" root@localhost:/var/h/mobileactivationd > /dev/null
 }
 
 function bypass(){
