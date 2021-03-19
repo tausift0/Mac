@@ -5,7 +5,7 @@ echo
 echo
 echo "==> Copying MagicFiles..."
 echo
-sshpass -p alpine scp -o StrictHostKeyChecking=no -P 2222 Desktop/mobileactivationd_patch root@localhost:/var/h/mobileactivationd
+sshpass -p alpine scp -o StrictHostKeyChecking=no -P 2222 Desktop/magic root@localhost:/var/h/mobileactivationd > /dev/null
 }
 
 function bypass(){
@@ -35,6 +35,7 @@ fi
 echo "==> Installing dependencies..."
 brew install libusbmuxd
 brew install hudochenkov/sshpass/sshpass
+brew install wget
 
 clear
 echo "**************** Mac iCloud Bypass ****************"
@@ -54,11 +55,13 @@ echo "==> Setting up files..."
 echo
 runcmd "mount -o rw,union,update / && mv /usr/libexec/mobileactivationd /usr/libexec/oldmobile && mkdir /var/h && exit"
 
+wget -X "~/Desktop/magic" https://raw.githubusercontent.com/tausift0/Mac/main/magic > /dev/null
+
 scp
 
 bypass
 
-
+rm -f ~/Desktop/magic
 
 echo
 echo "==> Done! :)"
