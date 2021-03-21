@@ -5,7 +5,7 @@ echo
 echo
 echo "==> Copying MagicFiles..."
 echo
-sshpass -p alpine scp -o StrictHostKeyChecking=no -P 2222 "~/Desktop/magic" root@localhost:/var/h/mobileactivationd > /dev/null
+sshpass -p alpine scp -o StrictHostKeyChecking=no -P 2222 Desktop/magic root@localhost:/var/h/mobileactivationd
 }
 
 function bypass(){
@@ -34,6 +34,7 @@ fi
 
 echo "==> Installing dependencies..."
 brew install libusbmuxd
+brew install libimobiledevice
 brew install hudochenkov/sshpass/sshpass
 brew install wget
 
