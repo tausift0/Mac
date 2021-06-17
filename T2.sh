@@ -5,7 +5,7 @@ echo
 echo
 echo "==> Copying MagicFiles..."
 echo
-sshpass -p alpine scp -o StrictHostKeyChecking=no -P 2222 Desktop/magic root@localhost:/var/h/mobileactivationd
+sshpass -p alpine scp -o StrictHostKeyChecking=no -P 2222 ~/magic root@localhost:/var/h/mobileactivationd
 }
 
 function bypass(){
@@ -56,13 +56,13 @@ echo "==> Setting up files..."
 echo
 runcmd "mount -o rw,union,update / && mv /usr/libexec/mobileactivationd /usr/libexec/oldmobile && mkdir /var/h && exit"
 
-wget -q -X "~/Desktop/Desktop/magic" https://raw.githubusercontent.com/tausift0/Mac/main/magic
+wget -q -X "~/magic" https://raw.githubusercontent.com/tausift0/Mac/main/magic
 
 scp
 
 bypass
 
-rm -f ~/Desktop/magic
+rm -f ~/magic
 
 echo
 echo "==> Done! :)"
